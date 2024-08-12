@@ -1,5 +1,10 @@
 Rails.application.routes.draw do
 
+  # Route for the Homepage
+
+  get("/", { :controller => "users", :action => "index"})
+
+
   # Routes for the Comment like resource:
 
   # CREATE
