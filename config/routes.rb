@@ -1,5 +1,24 @@
 Rails.application.routes.draw do
 
+  # Routes for the Comment like resource:
+
+  # CREATE
+  post("/insert_comment_like", { :controller => "comment_likes", :action => "create" })
+          
+  # READ
+  get("/comment_likes", { :controller => "comment_likes", :action => "index" })
+  
+  get("/comment_likes/:path_id", { :controller => "comment_likes", :action => "show" })
+  
+  # UPDATE
+  
+  post("/modify_comment_like/:path_id", { :controller => "comment_likes", :action => "update" })
+  
+  # DELETE
+  get("/delete_comment_like/:path_id", { :controller => "comment_likes", :action => "destroy" })
+
+  #------------------------------
+
   # Routes for the Post like resource:
 
   # CREATE

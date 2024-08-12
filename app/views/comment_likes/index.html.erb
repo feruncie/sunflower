@@ -1,0 +1,102 @@
+<div>
+  <div>
+    <h1>
+      List of all comment likes
+    </h1>
+  </div>
+</div>
+
+<hr>
+
+<div>
+  <div>
+    <h2>
+      Add a new comment like
+    </h2>
+
+    <form action="/insert_comment_like" method="post">
+      <div>
+        <label for="user_id_box">
+          User
+        </label>
+
+        <input type="text" id="user_id_box" name="query_user_id">
+      </div>
+
+      <div>
+        <label for="comment_id_box">
+          Comment
+        </label>
+
+        <input type="text" id="comment_id_box" name="query_comment_id">
+      </div>
+
+      <button>
+        Create comment like
+      </button>
+    </form>
+  </div>
+</div>
+
+<hr>
+<div>
+  <div>
+    <table border="1">
+      <tr>
+        <th>
+          ID
+        </th>
+
+        <th>
+          User
+        </th>
+
+        <th>
+          Comment
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+        </th>
+      </tr>
+
+      <% @list_of_comment_likes.each do |a_comment_like| %>
+      <tr>
+        <td>
+          <%= a_comment_like.id %>
+        </td>
+
+        <td>
+          <%= a_comment_like.user_id %>
+        </td>
+
+        <td>
+          <%= a_comment_like.comment_id %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_comment_like.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_comment_like.updated_at) %> ago
+        </td>
+
+        <td>
+          <a href="/comment_likes/<%= a_comment_like.id %>">
+            Show details
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
+
+<hr>
