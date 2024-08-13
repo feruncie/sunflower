@@ -20,6 +20,25 @@ task(:sample_users => :environment) do
 end 
 
 
+task(:sample_posts => :environment) do 
+  if Rails.env.development?
+    Post.destroy_all
+  end
+
+  user_ids = User.pluck(:id)
+  
+  20.times do 
+    y = Post.new
+
+    y.title = Faker::Lorem.sentence
+    y.body = Faker::Lorem.paragraph
+    y.user_id = user_ids.sample
+
+    y.save
+  end 
+end 
+
+
 
 
     
