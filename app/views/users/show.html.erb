@@ -1,7 +1,7 @@
 <div>
   <div>
     <h1>
-      User #<%= @the_user.id %> details
+       <%= @the_user.first_name %> <%= @the_user.last_name %>'s profile
     </h1>
 
     <div>
@@ -54,6 +54,13 @@
         <%= @the_user.mentor %>
       </dd>
 
+        <dt>
+        Mentee
+      </dt>
+      <dd>
+        <%= @the_user.mentee %>
+      </dd>
+      
       <dt>
         Biography
       </dt>
@@ -61,12 +68,6 @@
         <%= @the_user.biography %>
       </dd>
 
-      <dt>
-        Mentee
-      </dt>
-      <dd>
-        <%= @the_user.mentee %>
-      </dd>
 
       <dt>
         Industry

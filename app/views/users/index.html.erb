@@ -1,13 +1,27 @@
 <div>
   <div>
     <h1>
-      List of all users
+      Your Community
     </h1>
   </div>
 </div>
 
-<hr>
+ <div>
+      <div>
+        <a href="/">
+          Homepage
+        </a>
+   </div>
 
+    <div>
+      <div>
+        <a href="/posts">
+          Community Posts
+        </a>
+   </div>
+
+<hr>
+<!-- 
 <div>
   <div>
     <h2>
@@ -114,18 +128,13 @@
   </div>
 </div>
 
-<hr>
+--> 
+
+
 <div>
   <div>
     <table border="1">
       <tr>
-        <th>
-          ID
-        </th>
-
-        <th>
-          Username
-        </th>
 
         <th>
           First name
@@ -136,27 +145,11 @@
         </th>
 
         <th>
-          Linkedin profile
-        </th>
-
-        <th>
           Mentor
         </th>
 
-        <th>
-          Biography
-        </th>
-
-        <th>
+          <th>
           Mentee
-        </th>
-
-        <th>
-          Industry
-        </th>
-
-        <th>
-          Interests
         </th>
 
         <th>
@@ -168,30 +161,11 @@
         </th>
 
         <th>
-          Goals
-        </th>
-
-        <th>
-          Created at
-        </th>
-
-        <th>
-          Updated at
-        </th>
-
-        <th>
         </th>
       </tr>
 
       <% @list_of_users.each do |a_user| %>
       <tr>
-        <td>
-          <%= a_user.id %>
-        </td>
-
-        <td>
-          <%= a_user.username %>
-        </td>
 
         <td>
           <%= a_user.first_name %>
@@ -202,27 +176,11 @@
         </td>
 
         <td>
-          <%= a_user.linkedin_profile %>
-        </td>
-
-        <td>
           <%= a_user.mentor %>
         </td>
 
         <td>
-          <%= a_user.biography %>
-        </td>
-
-        <td>
           <%= a_user.mentee %>
-        </td>
-
-        <td>
-          <%= a_user.industry %>
-        </td>
-
-        <td>
-          <%= a_user.interests %>
         </td>
 
         <td>
@@ -234,19 +192,8 @@
         </td>
 
         <td>
-          <%= a_user.goals %>
-        </td>
-
-        <td>
-          <%= time_ago_in_words(a_user.created_at) %> ago
-        </td>
-        <td>
-          <%= time_ago_in_words(a_user.updated_at) %> ago
-        </td>
-
-        <td>
           <a href="/users/<%= a_user.id %>">
-            Show details
+            User Profile Page
           </a>
         </td>
       </tr>
