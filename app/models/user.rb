@@ -19,4 +19,13 @@
 #  updated_at         :datetime         not null
 #
 class User < ApplicationRecord
+
+  has_many(:posts, class_name: "Post", foreign_key: "user_id", dependent: :destroy)
+
+  has_many(:comments, class_name: "Comment", foreign_key: "user_id", dependent: :destroy)
+
+  has_many(:comment_likes, class_name: "CommentLike", foreign_key: "user_id", dependent: :destroy)
+  
+  has_many(:post_likes, class_name: "PostLike", foreign_key: "user_id", dependent: :destroy)
+
 end

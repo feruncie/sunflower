@@ -23,6 +23,7 @@ class PostsController < ApplicationController
     the_post.body = params.fetch("query_body")
     the_post.user_id = params.fetch("query_user_id")
 
+
     if the_post.valid?
       the_post.save
       redirect_to("/posts", { :notice => "Post created successfully." })
