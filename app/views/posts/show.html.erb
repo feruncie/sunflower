@@ -1,13 +1,13 @@
 <div>
   <div>
     <h1>
-      Post #<%= @the_post.id %> details
+      <%= @the_post.title %> Discussion
     </h1>
 
     <div>
       <div>
         <a href="/posts">
-          Go back
+         All Community Posts
         </a>
       </div>
 
@@ -37,7 +37,12 @@
         User
       </dt>
       <dd>
-        <%= @the_post.user_id %>
+        <% matching_users = User.where({ :id => @the_post.user_id }) %>
+
+        <% the_user = matching_users.at(0) %>
+
+        <%= the_user.username %> 
+
       </dd>
 
       <dt>
@@ -88,7 +93,8 @@
           User
         </label>
 
-        <input type="text" id="user_id_box" name="query_user_id" value="<%= @the_post.user_id %>">
+        <input type="text" id="user_id_box" name="query_user_id" value= "<%= the_user.username %>">
+        
       </div>
 
       <button>
