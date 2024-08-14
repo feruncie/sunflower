@@ -16,6 +16,7 @@ class PostsController < ApplicationController
     @comments = Comment.where({ :post_id => @post.id})
 
     render({ :template => "posts/show" })
+
   end
 
   def create

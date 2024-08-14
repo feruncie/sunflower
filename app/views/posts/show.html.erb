@@ -112,6 +112,31 @@
 
 <div>
   <div>
+    <h2>
+      Add a new comment
+    </h2>
+
+    <form action="/insert_comment" method="post">
+        <input type="hidden" name="query_user_id" value="<%= current_user.id %>">
+        <input type="hidden" name="query_post_id" value="<%= @post.id %>">
+
+      <div>
+        <label for="body_box">
+          Comment
+        </label>
+
+        <textarea id="body_box" name="query_body" rows="3"></textarea>
+      </div>
+
+      <button>
+        Create a new comment
+      </button>
+    </form>
+  </div>
+</div>
+
+<div>
+  <div>
     <table border="1">
       <tr>
 
