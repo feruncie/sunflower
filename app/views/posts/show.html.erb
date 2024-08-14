@@ -107,10 +107,71 @@
 <hr>
 
 
-<div>
+<div> <!-- this needs to be comments for that specific post NEED HELP HERE -->
 <h2>Comments</h2>
 
+<div>
+  <div>
+    <table border="1">
+      <tr>
 
-<!-- insert comments for the unique post here, not all comments for all posts -->
+        <th>
+          User
+        </th>
+
+        <th>
+          Post
+        </th>
+
+        <th>
+          Comment
+        </th>
+
+        <th>
+          Created at
+        </th>
+
+        <th>
+          Updated at
+        </th>
+
+        <th>
+          Delete Comment 
+        </th>
+      </tr>
+
+      
+      <% @comments.each do |a_comment| %>
+      <tr>
+
+        <td>
+          <%= a_comment.user.username %> <!-- change this to user name -->
+        </td>
+
+        <td>
+          <%= @post.title %> <!-- change this to post title -->
+        </td>
+
+        <td>
+          <%= a_comment.body %>
+        </td>
+
+        <td>
+          <%= time_ago_in_words(a_comment.created_at) %> ago
+        </td>
+        <td>
+          <%= time_ago_in_words(a_comment.updated_at) %> ago
+        </td>
+
+        <td> <!-- change this to delete a comment but only user can delete their own comment -->
+          <a href="/comments/<%= a_comment.id %>">
+            Delete Comment 
+          </a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>
 
 </div>

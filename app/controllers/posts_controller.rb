@@ -9,10 +9,11 @@ class PostsController < ApplicationController
 
   def show
     the_id = params.fetch("path_id")
-
     matching_posts = Post.where({ :id => the_id })
-
     @the_post = matching_posts.at(0)
+
+    @post = Post.find(params.fetch("path_id"))
+    @comments = Comment.where({ :post_id => @post.id})
 
     render({ :template => "posts/show" })
   end
