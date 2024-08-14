@@ -98,7 +98,12 @@ Rails.application.routes.draw do
   # DELETE
   get("/delete_user/:path_id", { :controller => "users", :action => "destroy" })
 
-  #------------------------------
+  #------------------------------ Log in and log out
+
+  get("/login", { :controller => "sessions", :action => "login" })
+  post("/login", { :controller => "sessions", :action => "login" })
+  get("/logout", { :controller => "sessions", :action => "logout" })
+  
 
   # This is a blank app! Pick your first screen, build out the RCAV, and go from there. E.g.:
 

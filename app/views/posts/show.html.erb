@@ -107,7 +107,7 @@
 <hr>
 
 
-<div> <!-- this needs to be comments for that specific post NEED HELP HERE -->
+ <!-- this needs to be comments for that specific post NEED HELP HERE -->
 <h2>Comments</h2>
 
 <div>
@@ -116,6 +116,7 @@
       Add a new comment
     </h2>
 
+    <% if  current_user %>
     <form action="/insert_comment" method="post">
         <input type="hidden" name="query_user_id" value="<%= current_user.id %>">
         <input type="hidden" name="query_post_id" value="<%= @post.id %>">
@@ -197,6 +198,4 @@
       <% end %>
     </table>
   </div>
-</div>
-
 </div>
